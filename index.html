@@ -39,7 +39,8 @@ var clock = document.getElementById("time");
 setInterval(function() {
   var now = Date.now();
   var current = Date.now();
-  var now = current / 1000;
+  var unroundednow = current / 1000;
+  var now = Math.round(unroundednow);
   var remainingSeconds = 365.25 * 24 * 60 * 60 - now;
 
   clock.innerHTML = remainingSeconds + " seconds remaining";
