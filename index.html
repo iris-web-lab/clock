@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VZDH196RMV"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VZDH196RMV"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -10,28 +9,39 @@
 
   gtag('config', 'G-VZDH196RMV');
 </script>
-  <title>Climate Clock</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    /* Add your CSS code here */
-    .h1{
-      
-    }
-    .h2{
-      
-    }
-    .p{
-      
-    }
-  </style>
+<title>Climate Clock</title>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: black;
+}
+
+.clock {
+  font-size: 60px;
+  color: white;
+  text-align: center;
+}
+</style>
 </head>
 <body>
-  <!-- Add your HTML content here
-  <h1 class="h1">iRIS Group</h1>
-  <h2 class="h2">Our Commitment</h2>
-  <p class="p">Lorem ipsup dolor sit amen</p> -->
-  <script src="https://climateclock.world/widget-v2.js" async></script>
-  <climate-clock />
+<div class="clock">
+  <span id="time"></span>
+</div>
+
+<script>
+var clock = document.getElementById("time");
+
+setInterval(function() {
+  var now = Date.now();
+  var remainingSeconds = 365.25 * 24 * 60 * 60 - now;
+
+  clock.innerHTML = remainingSeconds + " seconds remaining";
+}, 1000);
+</script>
+  <!--
+  
+  -->
 </body>
 </html>
